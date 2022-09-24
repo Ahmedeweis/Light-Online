@@ -18,6 +18,8 @@ html {
 body {
   font-family: 'Old Standard TT', serif;
   background-color:#101214 ; 
+  height:3000px;
+  z-index:1;
 }
 ul {
   list-style: none;
@@ -329,9 +331,14 @@ color:white;
 /* 0 projects */
 .projects {
 	display:grid;
-	grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+	grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
 	padding-top:var(--section-padding);
 	padding-bottom:var(--section-padding);
+}
+@media (max-width: 1204px) {
+	.projects {
+		grid-template-columns:repeat(3,auto);
+	}
 }
 .projects .box a img {
 	width:calc(100%);
@@ -347,49 +354,23 @@ color:white;
 }
 .projects .box:after {
 	content: " ";
-	width:calc(85% + 20px);
+	width:92%;
 	position:absolute;
 	height:1px;
 	background-color:white ;
-	bottom:19px;
-	left:25px;
-}
-@media (max-width: 1205px) {
-    .projects .box:after {
-	bottom:26px;
-	left:40px;
-    }
-}
-@media (max-width: 620px) {
-    .projects .box:after {
-	bottom:26px;
-	left:33px;
-    }
-}
-.projects .box:before{
-    content: " ";
-    height:90%;
-    position: absolute;
-    width: 1px;
-    background-color: white;
-    top: 20px;
-    right: 10px;
-    z-index: 999;
-}
-@media (max-width: 1205px) {
-    .projects .box:before{
-    top: 30px;
-    right: 15px;
-    z-index: 999;
-    } 
+	bottom:20px;
+	left:12px;
 }
 
-@media (max-width: 620px) {
-    .projects .box:before{
-    top: 25px;
-    right: 15px;
+.projects .box:before{
+    content: " ";
+    height:92%;
+    position: absolute;
+    width:1px;
+    background-color: white;
+    top: 20px;
+    right: 20px;
     z-index: 999;
-    } 
 }
 .projects .box h2 {
 	position:absolute;
@@ -399,3 +380,149 @@ color:white;
 	color:#fff;
 }
 /* 1 projects */
+/* 0 service */
+.Our-Services{
+	background-color:#1D1F22;
+	padding-top:var(--section-padding);
+	padding-bottom:var(--section-padding);
+}
+.service {
+	align-items:center;
+}
+.service h3 {
+	color:white;
+}
+.service h1 {
+	position:relative;
+}
+.service h1::after {
+	content: "...................";
+	width:100%;
+	height:1px;
+	color:white;
+	position:absolute;
+	bottom:0;
+	left:50%; 
+	transform:translateX(-50%);
+}
+.service-area {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-top:50px;
+	z-index:2;
+}
+@media (max-width: 768px) {
+  .service-area {
+    display:grid;
+    grid-template-columns:repeat(autofill,minmax(150,1fr));
+  }
+}
+.service-area .section-box {
+	background-color:#999;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	flex-direction:column;
+	flex-basis:15%;
+	text-align:center;
+	padding: 15px;
+	margin: 10px 10px 0 10px;
+	position:relative;
+}
+@media (max-width: 1205px) {
+ .service-area .section-box {
+ 	flex-basis:10%;
+ }
+}
+.service-area .section-box:hover {
+	background-color:red;
+}
+.service-area .section-box:hover  img {
+	background-color:transparent;
+	filter: hue-rotate(200deg);
+}
+.service-area .section-box::before {
+  content: " ";
+  position: absolute;
+  background-color: red;
+  color: red;
+  width: 0%;
+  height: 2px;
+  bottom: -10px;
+  left: 20px;
+  transition:0.5s;
+}
+.service-area .section-box:hover:before {
+  content: " ";
+  position: absolute;
+  background-color: red;
+  color: red;
+  width: 100%;
+  height: 2px;
+  bottom: -10px;
+  left: 20px;
+}
+.service-area .section-box::after {
+  content: " ";
+  position: absolute;
+  background-color: red;
+  color: red;
+  width: 2px;
+  height: 0%;
+  top: 20px;
+  right: -11px;
+  transition:0.5s;
+}
+.service-area .section-box:hover:after {
+  content: " ";
+  position: absolute;
+  background-color: red;
+  color: red;
+  width: 2px;
+  height: 100%;
+  top: 20px;
+  right: -11px;
+}
+.service-area .section-box .main-icon {
+	margin: 0px 0px 28px;
+}
+
+.service-area .section-box .content-box {
+	margin:0px 0px 20px;
+}
+
+.service-area .section-box .content-box h5 a {
+	font-size:19px;
+	color:black;
+}
+.service-area .section-box .content-box h5 a:hover {
+	color:white;
+}
+
+.service-area .section-box .link-box a {
+	font-size:15px;
+	color:black;
+	position:relative;
+	z-index:999;
+}
+.service-area .section-box .link-box a:hover {
+	color:white;
+}
+
+.service-area .section-box .link-box a:after {
+  content: " ";
+  position: absolute;
+  background-color: #897f7f;
+  color: red;
+  width: 40%;
+  height: 115%;
+  bottom: -7px;
+  left: -7px;
+  transition: 0.5s;
+  z-index:-1; 
+ }
+.service-area .section-box .link-box a:hover:after {
+  width: 130%;
+}
+/* 1 service */
